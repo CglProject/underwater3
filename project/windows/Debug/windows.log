@@ -1,1 +1,24 @@
-﻿  windows.vcxproj -> C:\Users\Chris\Desktop\bRenderer-test\Debug\bRenderer.exe
+﻿  RenderProject.cpp
+  Unknown compiler version - please run the configure tests and report the results
+c:\users\chris\source\repos\underwater3\brenderer\external\obj_parser\obj_parser.hpp(54): warning C4091: 'typedef ': ignored on left of '' when no variable is declared
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(115): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(151): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(170): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(189): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(234): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(254): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(294): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(321): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(374): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(385): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\brenderer\headers\objectmanager.h(396): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(111): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(118): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(210): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(212): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(214): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(216): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(222): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(223): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\source\repos\underwater3\project\implementation\renderproject.cpp(224): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  windows.vcxproj -> C:\Users\Chris\Source\Repos\underwater3\Debug\bRenderer.exe
