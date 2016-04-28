@@ -43,15 +43,23 @@ void RenderProject::initFunction()
 
 	// load models
 	bRenderer().getObjects()->loadObjModel("cube.obj", true, true, true, 4, false, false, cubeProperties);
-	bRenderer().getObjects()->loadObjModel("boat.obj", true, false, true, 4, false, false, boatProperties);
+	bRenderer().getObjects()->loadObjModel("boat.obj", true, true, true, 4, false, false, boatProperties);
 
 	// create sprites
 	ShaderPtr waterSurfaceShader = bRenderer().getObjects()->loadShaderFile_o("waterSurfaceShader", 0);
 	MaterialPtr waterSurfaceMaterial = bRenderer().getObjects()->createMaterial("waterSurfaceMaterial", waterSurfaceShader);								// create an empty material to assign either texture1 or texture2 to
-	bRenderer().getObjects()->createSprite("waterSurfaceSprice", waterSurfaceMaterial);
+	bRenderer().getObjects()->createSprite("waterSurfaceSprite", waterSurfaceMaterial);
+
+
+	ShaderPtr groundShader = bRenderer().getObjects()->loadShaderFile_o("groundShader", 0);
+	MaterialPtr groundMaterial = bRenderer().getObjects()->createMaterial("groundMaterial", groundShader);								// create an empty material to assign either texture1 or texture2 to
+	bRenderer().getObjects()->createSprite("groundSprite", groundMaterial);
 
 
 
+
+	bRenderer().getObjects()->createLight("testLight", vmml::Vector3f(0.0f, 10.f, 0.0f), vmml::Vector3f(1.f, 1.f, 1.f), 100.0f, 0.1f, 1000.0f);
+	bRenderer().getObjects()->loadObjModel("Rock1.obj", false, true, false, 1, true, false);
 
 
 	// create camera
@@ -115,13 +123,21 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
 	bRenderer().getModelRenderer()->queueModelInstance("cube", "cube_instance", camera, modelMatrix, std::vector<std::string>({}));
 
 
-	vmml::Matrix4f modelMatrix2 = vmml::create_translation(vmml::Vector3f(0.0f, 0.0f, -5971.5f)) * vmml::create_scaling(vmml::Vector3f(0.05));
+	vmml::Matrix4f modelMatrix2 = vmml::create_translation(vmml::Vector3f(0.0f, 0.0f, 5971.5f)) * vmml::create_scaling(vmml::Vector3f(0.05));
 	bRenderer().getModelRenderer()->queueModelInstance("boat", "boat_instance", camera, modelMatrix2, std::vector<std::string>({}));
 
 
-	vmml::Matrix4f modelMatrix3 = vmml::create_translation(vmml::Vector3f(0.0f, -2.0f, 0.0f)) * vmml::create_scaling(vmml::Vector3f(1,0));
-	//bRenderer().getModelRenderer()->drawModel("waterSurfaceSprite", camera, modelMatrix3, std::vector<std::string>({}), true, false);
+	vmml::Matrix4f modelMatrix3 = vmml::create_translation(vmml::Vector3f(0.0f, 100.0f, -10.0f)) * vmml::create_scaling(vmml::Vector3f(10000.0f));
+	modelMatrix3 *= vmml::create_rotation(3*M_PI_2_F, vmml::Vector3f(1.0f, 0.f, 0.f));
+	bRenderer().getModelRenderer()->drawModel("waterSurfaceSprite", camera, modelMatrix3, std::vector<std::string>({}), true, false);
 
+	vmml::Matrix4f modelMatrix4 = vmml::create_translation(vmml::Vector3f(0.0f, 20.0f, -10.0f)) * vmml::create_scaling(vmml::Vector3f(1.0f));
+	bRenderer().getModelRenderer()->drawModel("Rock1", camera, modelMatrix4, std::vector<std::string>({ "testLight" }), true, false);
+
+
+	vmml::Matrix4f modelMatrix5 = vmml::create_translation(vmml::Vector3f(0.0f, -100.0f, -10.0f)) * vmml::create_scaling(vmml::Vector3f(10000.0f));
+	modelMatrix5 *= vmml::create_rotation(M_PI_2_F, vmml::Vector3f(1.0f, 0.f, 0.f));
+	bRenderer().getModelRenderer()->drawModel("groundSprite", camera, modelMatrix5, std::vector<std::string>({}), true, false);
 
 }
 
