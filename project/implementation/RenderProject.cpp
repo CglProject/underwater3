@@ -9,7 +9,7 @@ void RenderProject::init()
 	if(Input::isTouchDevice())
 		bRenderer().initRenderer(true);										// full screen on iOS
 	else
-		bRenderer().initRenderer(1920, 1080, false, "The Cave - Demo");		// windowed mode on desktop
+		bRenderer().initRenderer(1000, 700, false, "Underwater-3");		// windowed mode on desktop
 		//bRenderer().initRenderer(View::getScreenWidth(), View::getScreenHeight(), true);		// full screen using full width and height of the screen
 
 	// start main loop 
@@ -35,18 +35,27 @@ void RenderProject::initFunction()
 	bRenderer().getObjects()->setShaderVersionES("#version 100");
 
 	// load materials and shaders before loading the model
-	ShaderPtr boatShader = bRenderer().getObjects()->loadShaderFile("boat", 0, false, true, true, false, false);
+	//ShaderPtr boatShader = bRenderer().getObjects()->loadShaderFile("boat", 1, false, true, true, false, false);
 
 	// create additional properties for a model
+	PropertiesPtr cubeProperties = bRenderer().getObjects()->createProperties("cubeProperties");
 	PropertiesPtr boatProperties = bRenderer().getObjects()->createProperties("boatProperties");
 
 	// load models
-	bRenderer().getObjects()->loadObjModel("boat.obj", true, true, true, 4, false, false, boatProperties);
-	//bRenderer().getObjects()->loadObjModel("cave_stream.obj", true, true, true, 4, false, false, streamProperties);
+	bRenderer().getObjects()->loadObjModel("cube.obj", true, true, true, 4, false, false, cubeProperties);
+	bRenderer().getObjects()->loadObjModel("boat.obj", true, false, true, 4, false, false, boatProperties);
+
+	// create sprites
+	ShaderPtr waterSurfaceShader = bRenderer().getObjects()->loadShaderFile_o("waterSurfaceShader", 0);
+	MaterialPtr waterSurfaceMaterial = bRenderer().getObjects()->createMaterial("waterSurfaceMaterial", waterSurfaceShader);								// create an empty material to assign either texture1 or texture2 to
+	bRenderer().getObjects()->createSprite("waterSurfaceSprice", waterSurfaceMaterial);
+
+
+
 
 
 	// create camera
-	bRenderer().getObjects()->createCamera("camera", vmml::Vector3f(0.0f, 0.0f, -10.0f), vmml::Vector3f(0.f, 0.f, 0.f));
+	bRenderer().getObjects()->createCamera("camera", vmml::Vector3f(0.0f, -2.0f, 0.0f), vmml::Vector3f(0.f, 0.f, 0.f));
 
 	// Update render queue
 	updateRenderQueue("camera", 0.0f);
@@ -103,7 +112,16 @@ void RenderProject::updateRenderQueue(const std::string &camera, const double &d
 	vmml::Matrix4f rotationMatrix = vmml::create_rotation(rotation, vmml::Vector3f::UNIT_Y);
 	modelMatrix *= rotationMatrix;
 
-	bRenderer().getModelRenderer()->queueModelInstance("boat", "boat_instance", camera, modelMatrix, std::vector<std::string>({}));
+	bRenderer().getModelRenderer()->queueModelInstance("cube", "cube_instance", camera, modelMatrix, std::vector<std::string>({}));
+
+
+	vmml::Matrix4f modelMatrix2 = vmml::create_translation(vmml::Vector3f(0.0f, 0.0f, -5971.5f)) * vmml::create_scaling(vmml::Vector3f(0.05));
+	bRenderer().getModelRenderer()->queueModelInstance("boat", "boat_instance", camera, modelMatrix2, std::vector<std::string>({}));
+
+
+	vmml::Matrix4f modelMatrix3 = vmml::create_translation(vmml::Vector3f(0.0f, -2.0f, 0.0f)) * vmml::create_scaling(vmml::Vector3f(1,0));
+	//bRenderer().getModelRenderer()->drawModel("waterSurfaceSprite", camera, modelMatrix3, std::vector<std::string>({}), true, false);
+
 
 }
 
