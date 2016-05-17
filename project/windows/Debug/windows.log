@@ -12,13 +12,13 @@ c:\users\chris\desktop\brenderer-test\brenderer\headers\objectmanager.h(321): wa
 c:\users\chris\desktop\brenderer-test\brenderer\headers\objectmanager.h(374): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
 c:\users\chris\desktop\brenderer-test\brenderer\headers\objectmanager.h(385): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
 c:\users\chris\desktop\brenderer-test\brenderer\headers\objectmanager.h(396): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(119): warning C4305: 'argument': truncation from 'double' to 'const float'
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(126): warning C4305: 'argument': truncation from 'double' to 'const float'
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(226): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(228): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(230): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(232): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(238): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(239): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(240): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-  windows.vcxproj -> C:\Users\Chris\Desktop\bRenderer-test\Debug\bRenderer.exe
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(68): error C2146: syntax error: missing ';' before identifier 'bRenderer'
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(135): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(142): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(247): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(249): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(251): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(253): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(259): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(260): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\chris\desktop\brenderer-test\project\implementation\renderproject.cpp(261): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
